@@ -1,0 +1,20 @@
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #7fffd4;
+}
+
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-block: 1rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.3a01df49.css.map */

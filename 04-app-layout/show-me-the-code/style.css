@@ -34,7 +34,7 @@ Header
 header {
   width: 100%;
   background-color: #f38c10;
-  margin-bottom: 3.3rem;
+  margin-bottom: 2.5rem;
 }
 nav {
   max-width: 1120px;
@@ -64,12 +64,13 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  margin-bottom: 8rem;
+  margin-bottom: 7rem;
 }
 .card {
   padding: 1rem;
   width: 330px;
   height: 200px;
+  margin-bottom: 1rem;
 }
 .rest-img {
   border-top-left-radius: 0.5rem;

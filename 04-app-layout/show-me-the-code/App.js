@@ -24,6 +24,7 @@ const Header = () => (
   </header>
 );
 
+// Zomato api
 const RestaurantData = [
   {
     resId: 20291162,
@@ -67,7 +68,7 @@ const RestaurantData = [
   },
   {
     resId: 19864171,
-    name: "Karthika Hotel",
+    name: "Naadan Thattukada",
     image:
       "https://b.zmtcdn.com/data/pictures/1/19864171/9b521402849b8ad5371ee9898878a8a6_o2_featured_v2.jpg",
     cuisine: ["Kerala", "Chinese", "Biriyani"],
@@ -80,8 +81,8 @@ const RestaurantCard = ({ name, image, cuisine, rating }) => {
     <div className="card">
       <img src={image} alt="restaurants" className="rest-img" />
       <h3 className="rest-name">{name}</h3>
-      <h4 className="rest-cuisine">{cuisine.join()}</h4>
-      {<p>{rating}</p>}
+      <h4 className="rest-cuisine">{cuisine.join(", ")}</h4>
+      {<p>{rating} ⭐</p>}
     </div>
   );
 };

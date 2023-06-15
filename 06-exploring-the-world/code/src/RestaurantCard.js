@@ -1,10 +1,10 @@
-const RestaurantCard = ({ name, image, rating, cuisine }) => {
+const RestaurantCard = ({ strMeal, strMealThumb, strCategory, strArea }) => {
   return (
     <div className="card">
-      <img src={image} alt="restaurants" className="rest-img" />
-      <h2 className="rest-name">{name}</h2>
-      <h4 className="rest-cuisine">{cuisine.join(", ")}</h4>
-      <p>{rating}</p>
+      <img src={strMealThumb} alt="restaurants" className="rest-img" />
+      <h2 className="rest-name">{strMeal}</h2>
+      <h4 className="rest-cuisine">{strArea}</h4>
+      <p>{strCategory}</p>
     </div>
   );
 };

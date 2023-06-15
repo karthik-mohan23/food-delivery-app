@@ -7,6 +7,7 @@
 }
 body {
   min-height: 100vh;
+  letter-spacing: 1px;
 }
 a {
   text-decoration: none;
@@ -55,7 +56,7 @@ nav {
   padding-left: 0.7rem;
   width: 20rem;
   margin-inline: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .nav-list {
   display: flex;
@@ -65,15 +66,17 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 .card {
   padding: 1rem;
   width: 330px;
-  height: 200px;
-  margin-bottom: 1rem;
+  border: 1px solid rgb(214, 214, 214);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .rest-img {
+  height: 200px;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }

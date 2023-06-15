@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/*============ 
+Header 
+============*/
+
+header {
+  width: 100%;
+  background-color: #f38c10;
+  margin-bottom: 2.5rem;
+}
+nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.logo {
+  color: black;
+}
+
+.search-bar {
+  border-radius: 1rem;
+  outline: none;
+  padding: 0.55rem;
+  padding-left: 0.7rem;
+  width: 20rem;
+  margin-inline: 1rem;
+  margin-bottom: 1rem;
+}
+.nav-list {
+  display: flex;
+  gap: 4rem;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 7rem;
+}
+.card {
+  padding: 1rem;
+  width: 330px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+.rest-img {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.rest-img,
+.rest-name,
+.rest-cuisine {
+  margin-bottom: 0.5rem;
+}
+footer {
+  width: 100%;
+  background-color: #f38c10;
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+}

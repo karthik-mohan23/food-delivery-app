@@ -8,6 +8,7 @@
 body {
   min-height: 100vh;
   letter-spacing: 1px;
+  line-height: 1.4;
 }
 a {
   text-decoration: none;
@@ -79,6 +80,7 @@ nav {
   height: 200px;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .rest-img,
 .rest-name,

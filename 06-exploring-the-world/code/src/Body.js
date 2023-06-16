@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
 import RestaurantCard from "./RestaurantCard";
-
+import Shimmer from "./Shimmer";
 // import { RestaurantData } from "../config";
 
 function filterData(searchText, restaurants) {
   const searchedRestaurant = restaurants.filter((restaurant) => {
-    return restaurant?.strMeal?.includes(searchText);
+    return restaurant?.strMeal
+      ?.toLowerCase()
+      ?.includes(searchText.toLowerCase());
   });
   console.log(searchedRestaurant);
   return searchedRestaurant;
@@ -30,8 +32,13 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-  return (
-    <div className="section">
+  // not render component (Early return)
+  if (!allRestaurants) return null;
+
+  return allRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="section show-menu">
       <div>
         <input
           className="search-bar"
@@ -49,9 +56,13 @@ const Body = () => {
         </button>
       </div>
       <section className="card-container">
-        {filterRestaurants.map((restaurant) => {
-          return <RestaurantCard {...restaurant} key={restaurant.idMeal} />;
-        })}
+        {filterRestaurants.length === 0 ? (
+          <h1>No results found</h1>
+        ) : (
+          filterRestaurants.map((restaurant) => {
+            return <RestaurantCard {...restaurant} key={restaurant.idMeal} />;
+          })
+        )}
       </section>
     </div>
   );

@@ -3,7 +3,12 @@ import { useState } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 
-const handleFilteredRestaurants = (searchText, restaurants) => {};
+const handleFilteredRestaurants = (searchText, restaurants) => {
+  filterData = restaurants.filter((restaurant) => {
+    return restaurant?.data?.name?.includes(searchText);
+  });
+  return filterData;
+};
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -39,14 +44,21 @@ const Body = () => {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          onClick={() => handleFilteredRestaurants(searchText, allRestaurants)}>
+          onClick={() => {
+            const data = handleFilteredRestaurants(searchText, allRestaurants);
+            setFilteredRestaurants(data);
+          }}>
           Search
         </button>
       </div>
       <section className="card-container">
-        {filteredRestaurants.map((restaurant) => {
-          return <RestaurantCard key={restaurant.data.id} {...restaurant} />;
-        })}
+        {filteredRestaurants.length === 0 ? (
+          <h1>No match found.</h1>
+        ) : (
+          filteredRestaurants.map((restaurant) => {
+            return <RestaurantCard key={restaurant.data.id} {...restaurant} />;
+          })
+        )}
       </section>
     </div>
   );

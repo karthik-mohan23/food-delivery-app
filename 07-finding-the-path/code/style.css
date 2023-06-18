@@ -84,9 +84,18 @@ nav {
   border: 1px solid rgb(214, 214, 214);
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  transition: all 0.3s;
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .rest-name {
+  font-size: 1.1rem;
   font-weight: 500;
+}
+.rest-cuisine {
+  color: #686b78;
+  font-size: 0.825rem;
 }
 .rest-img {
   height: 200px;

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
+import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
 
 const handleFilteredRestaurants = (searchText, restaurants) => {
@@ -32,7 +33,7 @@ const Body = () => {
     return;
   }
   return allRestaurants.length === 0 ? (
-    <h1>Shimmer</h1>
+    <Shimmer />
   ) : (
     <div className="section show-menu">
       <div>

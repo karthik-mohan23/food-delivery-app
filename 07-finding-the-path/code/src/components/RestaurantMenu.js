@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   const [restaurantInfo, setRestaurantInfo] = useState(null);
+
+  const { resId } = useParams();
 
   useEffect(() => {
     fetchMenu();
@@ -11,7 +14,8 @@ const RestaurantMenu = () => {
 
   const fetchMenu = async () => {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.0260688&lng=76.3124753&restaurantId=480622&submitAction=ENTER"
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.0260688&lng=76.3124753&restaurantId=" +
+        resId
     );
     const json = await response.json();
     setRestaurantInfo(json.data);
@@ -42,21 +46,11 @@ const RestaurantMenu = () => {
       <p>{cuisines.join(", ")}</p>
       <p>{totalRatingsString}</p>
       <h2>Menu Items</h2>
+      <h3>Recommended</h3>
       <div>
-        {itemCards.map((item) => {
-          return (
-            <div key={item.card.info.id}>
-              <h4>{item.card.info.name}</h4>
-              {/* <img
-                src={
-                  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" +
-                  imageId
-                }
-                alt=""
-              /> */}
-            </div>
-          );
-        })}
+        {itemCards.map((item) => (
+          <p>{item.card.info.name}</p>
+        ))}
       </div>
     </div>
   );
